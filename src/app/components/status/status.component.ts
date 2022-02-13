@@ -14,14 +14,17 @@ export class StatusComponent implements OnInit {
 
   datacenters = [
     {
+      id: 1,
       name: 'Jackson',
       status: "online"
     },
     {
+      id: 2,
       name: 'Lansing',
       status: "online"
     },
     {
+      id: 3,
       name: 'Grand Rapids',
       status: "offline"
     },

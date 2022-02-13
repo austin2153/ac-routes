@@ -3,15 +3,18 @@
 <div class="row">
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
-    <a
-      href="#" 
-      class="list-group-item"
-      *ngFor="let dc of datacenters">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{dc.name}}</h5>
-        <small>refresh status</small>
-      </div>
-      <p class="mb-1">Status: {{dc.status}}</p>
-    </a>
+      <a
+         
+        class="list-group-item"
+        *ngFor="let dc of datacenters" [routerLink]="['datacenter', dc.name]">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{dc.name}}</h5>
+          <small>refresh status</small>
+        </div>
+        <p class="mb-1">Status: {{dc.status}}</p>
+      </a>
   </div>
+  <br>
+  <br>
+  <router-outlet></router-outlet>
 </div>

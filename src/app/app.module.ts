@@ -12,10 +12,13 @@ import { LoginComponent } from './components/login/login.component';
 import { StatusDetailComponent } from './components/status-detail/status-detail.component';
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginComponent},
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent },
-  { path: 'status', component: StatusComponent},
+  { path: 'status', component: StatusComponent, children: [
+    {path: 'datacenter/:name', component: StatusDetailComponent}
+  ]},
+  // { path: 'status/:id:name', component: StatusDetailComponent},
   { path: 'networks', component: NetworksComponent},
   { path: 'environments', component: EnvironmentsComponent}
 ];
